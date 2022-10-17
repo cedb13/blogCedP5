@@ -1,5 +1,5 @@
 <?php
-namespace App\Autoloader;
+namespace App\Lib\Autoloader;
 
 /**
  * Class Autoloader
@@ -22,6 +22,8 @@ class Autoloader{
         if (strpos($class, __NAMESPACE__ . '\\') === 0){
             $class = str_replace ('__NAMESPACE__\\', '', $class);
             $class = str_replace('\\', '/', $class);
+            echo __DIR__ .'/'.$class.'.php';
+            die();
             require __DIR__ .'/'.$class.'.php';
         }
     }

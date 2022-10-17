@@ -2,9 +2,7 @@
 
 namespace App\Controllers\Posts;
 
-use App\Controllers\Controller\Controller;
-
-use App\Model\Post\Post;
+use App\Controller\Controller;
 
 class PostsController extends Controller{
 

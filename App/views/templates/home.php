@@ -1,6 +1,8 @@
 <h1>Je suis la homepage</h1>
 
-<p><a href="index.php?p=single">SINGLE</a></p>
+<h1> Bonjour <?= $cv['nom'].' '.$cv['prenom']; ?> </h1>
+
+<p><a href="index.php?page=posts">Posts</a></p>
 
 <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
     <div class="col-md-6 px-0">

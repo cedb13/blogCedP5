@@ -3,11 +3,9 @@
 namespace App\Model\Post;
 
 use App\Lib\App\App;
-use App\Model\Table\Table;
+use App\Model\Model;
 
-require 'table.php';
-
-class Post extends Table{
+class Post extends Model{
 
     protected static $table = 'posts';
 

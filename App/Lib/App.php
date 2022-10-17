@@ -2,7 +2,6 @@
 namespace App\Lib\App;
 
 use App\Lib\Database\Database;
-use App\Model\Table\Table;
 
 class App{
 

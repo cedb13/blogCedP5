@@ -23,13 +23,13 @@ class Home extends Table{
     }
 
     public function getPicture(){
-        return $this->picture;
+        $picture= $this->picture;
+        return $picture;
     }
 
-    public function getExcerpt(){
-        $html = '<p>' . substr($this->content_post, 0, 250) . '...</p>';
-        $html .= '<p><a href="' . $this->getURL() . '">Voir la suite</a></p>';
-        return $html;
+    public function getContent(){
+        $contentHome= $this->content_post;
+        return $contentHome;
     }
 
 

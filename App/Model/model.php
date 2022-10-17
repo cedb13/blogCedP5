@@ -1,23 +1,23 @@
 <?php
-namespace App\Model\Table;
+namespace App\Model;
 
 use App\Lib\App\App;
 
-class Table{
+class Model{
 
     protected static $table;
 
     private static function getTable(){
         if(static::$table === null){
             $class_name = explode('\\', get_called_class());
-            static::$table =strtolower(end($class_name));
+            static::$table =strtolower(end($class_name)) . 's';
         }
         return static::$table;
     }
 
     public static function find($id){
         return  App::getDb()->prepare("
-        SELECT * 
+        SELECT *
         FROM " . static::$table . "
         WHERE id = ?
         ", [$id], get_called_class(), true);
@@ -33,7 +33,7 @@ class Table{
 
     public static function all(){
         return App::getDb()->query("
-            SELECT * 
+            SELECT *
             FROM " . static::$table . "
             ",  get_called_class());
     }

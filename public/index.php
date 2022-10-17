@@ -1,7 +1,6 @@
 <?php
-
-require '../app/Autoloader.php';
-App\Autoloader\Autoloader::register();
+require '../App/Lib/Autoloader.php';
+App\Lib\Autoloader\Autoloader::register();
 
 $page='home';
 $action='show';
@@ -14,21 +13,10 @@ if(isset($_GET['action'])){
     $action = $_GET['action'];
 }
 
-
-$nameController="App\Controllers\\".ucfirst($page)."Controller";
-
+//j'ai ajouté la classe au namespace d'ou le doublon
+$nameController="App\Controllers\\".ucfirst($page)."Controller\\".ucfirst($page)."Controller";
 echo $nameController;
 
+$controller = new $nameController;
 
-echo "<br>";
-
-$nameClass=$nameController::get_class();
-echo $nameClass;
-
-if(isset($nameController)){
-    $nameClass=$nameController::get_class();
-    echo $nameClass;
-    //$action=$nameController::show();
-    //echo $action;
-}
 
